@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Saber! - A-Frame</title>
+    <meta name="description" content="Web Saber! - A-Frame">
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="components/target-generator.js"></script>
+    <script src="components/target.js"></script>
+    <script src="components/saber-controls.js"></script>
+  </head>
+  <body>
+    <a-scene pool__target="mixin: target; size: 20" target-generator background="color: black">
+      <a-assets>
+        <a-image id="floor" src="images/floor.png"></a-image>
+        <a-image id="redTargetTexture" src="images/redTarget.png"></a-image>
+        <a-image id="blueTargetTexture" src="images/blueTarget.png"></a-image>
+        <a-image id="redTargetArrowTexture" src="images/redTargetArrow.png"></a-image>
+        <a-image id="blueTargetArrowTexture" src="images/blueTargetArrow.png"></a-image>
+        <a-asset-item id="bear-obj" src="images/avatar3-head.obj"></a-asset-item>
+        <a-asset-item id="bear-mtl" src="images/avatar3-head.mtl"></a-asset-item>
+      </a-assets>
+      <!-- <a-entity environment="preset: checkerboard"></a-entity> -->
+      <a-entity saber-controls="hand: left"></a-entity>
+      <a-entity saber-controls="hand: right"></a-entity>
+      <a-entity camera="spectator: true" wasd-controls position="0 1.6 -0.5" rotation="0 0 0"></a-entity>
+
+      <a-entity camera-rig rotation="0 0 0">
+        <a-entity camera look-controls>
+          <a-entity obj-model="obj: #bear-obj; mtl: #bear-mtl" position="0 0.1 0"></a-entity>
+        </a-entiy>
+      </a-entity>
+      <!-- Lights -->
+      <a-entity id="light0" light="color:#f8b927;intensity:2;type:point;" position="0 -2 0.5"></a-entity>
+      <a-entity id="light1" light="type:point;color:#ab7121" position="-2.5 2.38 2.7" ></a-entity>
+      <a-entity id="light2" light="color:#205eff;type:point;" position="2.9 2.29 2.7"></a-entity>
+      <a-entity id="light3" light="color:#a431f0;type:point;" position="-2.5 2.38 -2.5"></a-entity>
+      <a-entity id="light4" light="color:#f130cf;intensity:0.66;type:point;" position="3 2.38 -0.61"></a-entity>
+      <a-entity geometry="primitive: plane; width: 3; height: 3" material="shader: flat; src: #floor" position="0 0 0" rotation="-90 0 0"></a-entity>
+    </a-scene>
+  </body>
+</html>
