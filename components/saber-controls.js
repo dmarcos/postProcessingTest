@@ -33,6 +33,7 @@ AFRAME.registerComponent('saber-controls', {
     saberPivotEl.appendChild(saberHandleEl);
     saberPivotEl.appendChild(saberEl);
     el.appendChild(saberPivotEl);
+    saberEl.setAttribute('trail', '');
   },
 
   tick: function () {
