@@ -14,7 +14,7 @@ AFRAME.registerComponent('saber-controls', {
 
   initSaber: function () {
     var el = this.el;
-    var saberHandleEl =  document.createElement('a-entity');
+    var saberHandleEl = document.createElement('a-entity');
     var saberEl = this.saberEl = document.createElement('a-entity');
     var saberPivotEl = document.createElement('a-entity');
     var saberColor = this.data.hand === 'left' ? '#f9a7c6' : '#98befc';
@@ -33,7 +33,6 @@ AFRAME.registerComponent('saber-controls', {
     saberPivotEl.appendChild(saberHandleEl);
     saberPivotEl.appendChild(saberEl);
     el.appendChild(saberPivotEl);
-    saberEl.setAttribute('trail', '');
   },
 
   tick: function () {

@@ -1,6 +1,6 @@
 AFRAME.registerComponent('target', {
   schema: {
-    speed: {default: 5},
+    speed: {default: 4},
     color: {default: 'red', oneOf: ['red', 'blue']},
     debug: {default: false},
     size: {default: 0.5}
